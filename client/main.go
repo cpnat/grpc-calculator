@@ -66,6 +66,7 @@ func main(){
 			ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		}
 	})
+	
 
 	if err := g.Run(":1337"); err != nil {
 		log.Fatalf("Failed to run server: %v", err)
