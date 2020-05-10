@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+message Request{
+  int64 a = 1; // numbers denote the size of the serialised data type
+  int64 b = 2; // each needs a unique number (1-15 reserved for 1 byte)
+}
+
+message Response{
+  int64 result = 1;
+}
+
+service AddService {
+  rpc Add(Request) returns (Response);
+  rpc Multiply(Request) returns (Response);
+}
